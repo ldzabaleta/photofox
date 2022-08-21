@@ -1,9 +1,10 @@
 import React from 'react'
+import cartIcon from './/cart-fill.svg'
 
 const CartWidget = () => {
   return (
     <div>
-      <i className='bi bi-cart-fill fs-6'></i>
+      <img className='py-5' src={cartIcon} alt='Cart'></img>
     </div>
     
   )
