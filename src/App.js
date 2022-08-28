@@ -2,39 +2,30 @@ import React from 'react';
 import './App.css';
 
 //Components
+import ItemCount from './components/ItemCount/ItemCount';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
-import ItemListCointainer from './ItemListCointainer';
+import ItemListCointainer from './components/ItemListContainer/ItemListCointainer';
 
 
-class App extends React.Component {
-render() {
+
+const App = () => {
   return (
     <div>
       <Header />
       <div className='d-flex'>
         <NavBar />
       </div>
-      <div className='d-flex'>
+      <div className=''>
         <div className='px-5'>
-          <ItemListCointainer 
-          greeting='ITEM 1'
-          />
+          <ItemListCointainer />
         </div>
-        <div className='px-5'>
-          <ItemListCointainer 
-          greeting='ITEM 2'
-          />
-        </div>
-        <div className='px-5'>
-          <ItemListCointainer 
-          greeting='ITEM 3'
-          />
+        <div>
+          <ItemCount stock="25" initial="1" />
         </div>
       </div>
     </div>
   )
 }
-}
 
-export default App;
+export default App

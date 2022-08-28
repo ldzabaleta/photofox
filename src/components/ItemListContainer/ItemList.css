@@ -1,0 +1,43 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.list {
+  list-style: none;
+  text-align: center;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-decoration-none {
+  color: black;
+  transition: 0.5s;
+}
+
+.text-decoration-none:hover {
+  color: #434343;
+}
+
+.image, .image .image__zoom, .image .creditCard__zoom {
+  position: relative;
+}
+.image .image__zoom, .image .creditCard__zoom {
+  transition: transform 2s;
+}
+
+.image:hover .image__zoom, .image:hover .creditCard__zoom, .image .image__zoom:hover .image__zoom, .image .creditCard__zoom:hover .image__zoom, .image .image__zoom:hover .creditCard__zoom, .image .creditCard__zoom:hover .creditCard__zoom {
+  transform: scale(1.04);
+}
+
+.image:hover .creditCard__zoom, .image .image__zoom:hover .creditCard__zoom, .image .creditCard__zoom:hover .creditCard__zoom {
+  transform: scale(1.25);
+}
+
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 28.33333333%;
+}

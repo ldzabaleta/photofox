@@ -2,7 +2,7 @@ import React from 'react'
 import './NavBar.css';
 
 //Components
-import CartWidget from './CartIcon';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
   return (
