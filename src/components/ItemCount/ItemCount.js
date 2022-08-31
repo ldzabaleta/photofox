@@ -10,7 +10,7 @@ const ItemCount = ({stock, initial}) => {
     }
   
     const CounterDown = () => {
-      if (counter >= 1) setCounter(counter - 1)
+      if (counter > 1) setCounter(counter - 1)
     }
     
 

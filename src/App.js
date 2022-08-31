@@ -21,7 +21,7 @@ const App = () => {
           <ItemListCointainer />
         </div>
         <div>
-          <ItemCount stock="25" initial="1" />
+          <ItemCount stock={25} initial={1} />
         </div>
       </div>
     </div>
