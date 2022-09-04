@@ -5,7 +5,7 @@ const ItemListCointainer = () => {
     const [item, setItem] = useState([])
 
     useEffect(()=>{
-        fetch('https://mocki.io/v1/5addbfae-cb81-4ce7-b334-a90d0e54bca9')
+        fetch('https://630feac036e6a2a04ee38c80.mockapi.io/api/v1/items')
   .then(response => response.json())
   .then(json => setItem(json))
 },[]);

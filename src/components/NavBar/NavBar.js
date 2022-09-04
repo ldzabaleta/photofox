@@ -1,5 +1,6 @@
 import React from 'react'
 import './NavBar.css';
+import { Link } from 'react-router-dom';
 
 //Components
 import CartWidget from './CartWidget';
@@ -13,18 +14,10 @@ const NavBar = () => {
         <div className='collapse navbar-collapse d-flex' id="navbarSupportedContent">
 
             <ul className='navbar-nav me-auto mb-2 mb-lg-0 list'>
-                <li className='nav-item'>
-                    <a className='nav-link active link' aria-current="page" href="index.html">Inicio</a>
-                </li>
-                <li className='nav-item'>
-                    <a className='nav-link link' href="./como-comprar.html">Cómo comprar</a>
-                </li>
-                <li className='nav-item'>
-                    <a className='nav-link link' href="./faq.html">F.A.Q</a>
-                </li>    
-                <li className='nav-item'>
-                    <a className='nav-link link' href="./contacto.html">Contacto</a>
-                </li>
+            <Link to='/' className='nav-item nav-link link'>Inicio</Link>
+                <Link to='/como-comprar' className='nav-item nav-link link'>Cómo comprar</Link>
+                <Link to='/faq' className='nav-item nav-link link'>FAQ</Link> 
+                <Link to='/contact' className='nav-item nav-link link'>Contacto</Link>
             </ul>
             <div className='px-2'>
                 <a href="./contacto.html">
