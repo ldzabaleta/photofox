@@ -12,7 +12,7 @@ import Home from './components/Views/Home/Home'
 import ComoComprar from './components/Views/ComoComprar/ComoComprar'
 import Faq from './components/Views/Faq/Faq'
 import Contact from './components/Views/Contact/Contact'
-import ItemDetail from './components/Views/ItemDetail/ItemDetail';
+import ItemDetailContainer from './components/Views/ItemDetailContainer/ItemDetailContainer';
 
 const App = () => {
   return (
@@ -27,7 +27,7 @@ const App = () => {
           <Route path='/como-comprar' element={<ComoComprar />} />
           <Route path='/faq' element={<Faq />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/detail/:id' element={<ItemDetail />} />
+          <Route path='/detail/:id' element={<ItemDetailContainer />} />
         </Routes>
       </div>
       {/* <div className=''>

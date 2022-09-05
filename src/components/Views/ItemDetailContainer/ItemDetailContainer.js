@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
-import './ItemDetail.css'
+import './ItemDetailContainer.css'
 
 
-const ItemDetail = () => {
+const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
     let {id} = useParams()
 
@@ -38,4 +38,5 @@ const ItemDetail = () => {
     )
   }
 
-export default ItemDetail
+export default ItemDetailContainer
+
