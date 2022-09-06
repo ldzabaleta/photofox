@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <div className='col-md-3 pb-5 mx-5'>
           <select value={selected} className="form-select" aria-label="Default select example" onChange={handleChange}>
-              <option value=""></option>
+              <option value="">Todos los productos</option>
               <option value="presets">Lightroom Presets</option>
               <option value="talleres">Talleres Online</option>
           </select>
