@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
 
-const ItemListCointainer = () => {
+const ItemListCointainer = ({category}) => {
     const [item, setItem] = useState([])
 
     useEffect(()=>{
@@ -12,7 +12,7 @@ const ItemListCointainer = () => {
 
   return (
     <div>
-      <ItemList items={item} />
+      <ItemList items={item} category={category} />
     </div>
   )
 }

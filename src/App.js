@@ -28,6 +28,7 @@ const App = () => {
           <Route path='/faq' element={<Faq />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<ItemDetailContainer />} />
+          <Route path='/category/:id' element={<Home />} />
         </Routes>
       </div>
       {/* <div className=''>
