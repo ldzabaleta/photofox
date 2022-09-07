@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import './Home.css'
 import ItemListCointainer from '../../ItemListContainer/ItemListCointainer'
+import InProgress from '../../InProgress/InProgress.js'
 
 const Home = () => {
 
   const [selected, setSelected] = useState('')
+  const [isLoading, setIsLoading] = useState (false) 
 
   const handleChange = event => {
+    setIsLoading(true)
     setSelected(event.target.value)
+    setIsLoading(false)
+    
   }  
   return (
     <div>
@@ -19,7 +24,7 @@ const Home = () => {
           </select>
       </div> 
       <div>
-        <ItemListCointainer category={selected} />
+      {isLoading ? <InProgress /> : <ItemListCointainer category={selected} />}
       </div>
     </div>
   )
