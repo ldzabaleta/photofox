@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Routes,Route} from 'react-router-dom'
 // import ItemCount from './components/ItemCount/ItemCount';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
+import Cart from './components/Views/Cart/Cart';
 
 // Views
 import Home from './components/Views/Home/Home'
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/detail/:id' element={<ItemDetailContainer />} />
           <Route path='/category/:id' element={<Home />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </div>
       {/* <div className=''>

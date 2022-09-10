@@ -11,7 +11,9 @@ const Home = () => {
   const handleChange = event => {
     setIsLoading(true)
     setSelected(event.target.value)
-    setIsLoading(false)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
     
   }  
   return (

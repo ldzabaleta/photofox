@@ -16,7 +16,7 @@ const Item = ({ product }) => {
                             <h2 className="lead my-1 text-center">${product.price}</h2>
                             <h3 className="lead my-1 text-center">{product.cuotas}</h3>
                             <span className="align-self-center py-3">
-                                <div> <button className="int__button" style={{lineHeight: '0.3rem'}}>COMPRAR</button></div>
+                                <div> <button className="int__button" style={{lineHeight: '0.3rem'}}>VER MÁS</button></div>
                             </span>
                         </span>
                     </div>

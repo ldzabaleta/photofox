@@ -20,7 +20,7 @@ const NavBar = () => {
                 <Link to='/contact' className='nav-item nav-link link'>Contacto</Link>
             </ul>
             <div className='px-2'>
-                <Link to="/">
+                <Link to="/cart">
                     <CartWidget />
                 </Link>       
             </div>
