@@ -2,19 +2,22 @@ import React, { useState } from 'react'
 import '../ItemDetailContainer/ItemDetailContainer.css'
 import ItemCount from '../../ItemCount/ItemCount.js'
 import { Link } from 'react-router-dom'
+import { UseProductsContext } from '../../ProductsContext/ProductsContext'
 
 const ItemDetail = ({item}) => {
     const [itemQuantity, setItemQuantity] = useState(1)
     const [seAgregoAlCarrito, setSeAgregarAlCarrito] = useState(false)
+    const { AddProduct }  = UseProductsContext()
     const onAdd = (quantityToAdd) => {
         setItemQuantity(quantityToAdd);
     }
 
     const addToCart= () => {
         setSeAgregarAlCarrito(true)
+        AddProduct(item, itemQuantity)
     }
-    const agregarAlCarrito = seAgregoAlCarrito ? '' : <div> <button className="int__button" style={{lineHeight: '0.3rem'}} onClick={addToCart}>AÑADIR AL CARRITO {itemQuantity} </button></div>
 
+    const agregarAlCarrito = seAgregoAlCarrito ? '' : <div> <button className="int__button" style={{lineHeight: '0.3rem'}} onClick={addToCart}>AÑADIR AL CARRITO {itemQuantity} </button></div>
     const finalizarCompra = seAgregoAlCarrito ? <Link to="/cart">
     <div> <button className="int__button" style={{lineHeight: '0.3rem'}}>FINALIZAR COMPRA</button></div>
 </Link> : '';
