@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../ItemDetailContainer/ItemDetailContainer.css'
 import ItemCount from '../../ItemCount/ItemCount.js'
 import { Link } from 'react-router-dom'
-import { UseProductsContext } from '../../ProductsContext/ProductsContext'
+import { UseProductsContext } from '../../CartContext/CartContext'
 
 const ItemDetail = ({item}) => {
     const [itemQuantity, setItemQuantity] = useState(1)
@@ -55,4 +55,4 @@ return (
 )
 }
 
-export default ItemDetail
+export default ItemDetail;

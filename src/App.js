@@ -13,7 +13,7 @@ import ComoComprar from './components/Views/ComoComprar/ComoComprar'
 import Faq from './components/Views/Faq/Faq'
 import Contact from './components/Views/Contact/Contact'
 import ItemDetailContainer from './components/Views/ItemDetailContainer/ItemDetailContainer';
-import ProductsProvider from './components/ProductsContext/ProductsContext';
+import ProductsProvider from './components/CartContext/CartContext';
 
 const App = () => {
   return (
@@ -39,4 +39,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

@@ -1,11 +1,11 @@
 import React from 'react'
-import { UseProductsContext } from '../../ProductsContext/ProductsContext'
+import { UseProductsContext } from '../../CartContext/CartContext'
 const Cart = () => {
-    const {CartList}  = UseProductsContext()
+    const { CartList }  = UseProductsContext()
     console.log(CartList)
     return (
         <div>Cart</div>
     )
 }
 
-export default Cart
+export default Cart;

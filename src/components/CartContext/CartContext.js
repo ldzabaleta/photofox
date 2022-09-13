@@ -48,4 +48,4 @@ const ProductsProvider = ({ children }) => {
       );
 }
 
-export default ProductsProvider
+export default ProductsProvider;
