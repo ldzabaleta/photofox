@@ -4,21 +4,19 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
 const Cart = () => {
     const { CartList, RemoveProduct }  = UseProductsContext()
-    const [cartList, setCartList] = useState(CartList)
+    const [itemWasDeleted, setItemWasDeleted] = useState(0)
 
-const DeleteItem = (item) => {
-    RemoveProduct(item)
-    setCartList(CartList)
-    console.log(CartList)
-    console.log(cartList);
-}
-    console.log(CartList)
+    const DeleteItem = (item) => {
+        setItemWasDeleted(itemWasDeleted + 1)
+        RemoveProduct(item)
+    }
+console.log(CartList);
     return (
         <div>
             <table>
                 <tbody>
-                {cartList.items.length ? 
-                cartList.items.map((item, key) => (
+                {CartList.items.length ? 
+                CartList.items.map((item, key) => (
                     <tr key={key}>
                         <td>
                             <div className="px-3 pb-3"><img src={item.image} alt={item.name} width="48" /></div>
@@ -58,13 +56,13 @@ const DeleteItem = (item) => {
                         </tr></>
             } 
             {
-                cartList.items.length ? 
+                CartList.items.length ? 
                 <tr>
                     <td>
                     <h5>Total</h5>
                 </td>
                 <td>
-                    ${cartList.total.toFixed(2)}
+                    ${CartList.total.toFixed(2)}
                 </td>
             </tr>  : ''          }
             </tbody>
