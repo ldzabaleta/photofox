@@ -6,6 +6,7 @@ export const UseProductsContext = () => useContext(ProductsContext);
 
 const ProductsProvider = ({ children }) => {
     const [CartList, SetCartList] = useState({items: [], total: 0, cantidadTotal: 0});
+    const [totalItems, SetTotalItems] = useState(0)
     const AddProduct = (item, itemQuantity) => {
       const index = CartList.items.findIndex((i) => i.id === item.id);
 
@@ -14,6 +15,7 @@ const ProductsProvider = ({ children }) => {
         CartList.total += itemQuantity * CartList.items[index].price
         CartList.cantidadTotal += itemQuantity
         SetCartList(CartList);
+        SetTotalItems(CartList.cantidadTotal);
       } else {
         item.cantidad = itemQuantity
         CartList.total += item.cantidad * item.price
@@ -23,11 +25,13 @@ const ProductsProvider = ({ children }) => {
           total: CartList.total,
           cantidadTotal: CartList.cantidadTotal
         } );
+        SetTotalItems(CartList.cantidadTotal)
       }
     };
 
     const ClearCart = () => {
       SetCartList({items: [], total: 0, cantidadTotal: 0});
+      
     };
 
     const RemoveProduct = (item) => {
@@ -41,6 +45,8 @@ const ProductsProvider = ({ children }) => {
           CartList.items.splice(index, 1);
           SetCartList(CartList); 
         }
+        SetTotalItems(CartList.cantidadTotal)
+        return totalItems
       };
       
     return (

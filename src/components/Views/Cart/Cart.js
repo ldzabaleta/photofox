@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { UseProductsContext } from '../../CartContext/CartContext'
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
 const Cart = () => {
     const { CartList, RemoveProduct }  = UseProductsContext()
-    const [itemWasDeleted, setItemWasDeleted] = useState(0)
 
     const DeleteItem = (item) => {
-        setItemWasDeleted(itemWasDeleted + 1)
         RemoveProduct(item)
     }
-console.log(CartList);
     return (
         <div>
             <table>
@@ -34,10 +31,7 @@ console.log(CartList);
                             <div className="">
                                 <span>
                                     <div className="p-2"> 
-                                        
-                                        <DeleteIcon onClick={() => DeleteItem(item)}></DeleteIcon>
-                                                
-                                                {/* onClick={removeProduct({index})} */}    
+                                        <DeleteIcon onClick={() => DeleteItem(item)}></DeleteIcon>    
                                     </div>
                                 </span>
                             </div>
