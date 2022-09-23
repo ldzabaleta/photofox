@@ -2,17 +2,24 @@ import React, { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import './ItemDetailContainer.css'
-
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../FirebaseConfig";
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
     let {id} = useParams()
 
-    useEffect(()=>{
-        fetch(`https://630feac036e6a2a04ee38c80.mockapi.io/api/v1/items/${id}`)
-  .then(response => response.json())
-  .then(json => setItem(json))
-},[id]);
+  const getItemDetail = async (itemId) => {
+    const docRef = doc(db, "item", `${itemId}`);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setItem(docSnap.data())
+        } 
+  }
+
+    useEffect(() => {
+      getItemDetail(id);      
+    }, [id]);
 
     
 

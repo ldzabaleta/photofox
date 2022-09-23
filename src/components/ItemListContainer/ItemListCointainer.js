@@ -1,18 +1,33 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
 
+//Firebase
+import { collection, query, getDocs, where } from "firebase/firestore";
+import { db } from "../FirebaseConfig";
+
 const ItemListCointainer = ({category}) => {
-    const [item, setItem] = useState([])
+    const [itemData, setItemData] = useState([])
+
+    const getItems = async () => {
+      let q = query(collection(db, "item"))
+      const docs = [];
+
+      if (category) q = query(q, where('category', '==', `${category}`))
+
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push( {...doc.data(),id: doc.id})
+      });
+      setItemData(docs)
+    };
 
     useEffect(()=>{
-        fetch('https://630feac036e6a2a04ee38c80.mockapi.io/api/v1/items')
-  .then(response => response.json())
-  .then(json => setItem(json))
-},[]);
+        getItems()
+    });
 
-  return (
+  return ( 
     <div>
-      <ItemList items={item} category={category} />
+      <ItemList items={itemData} />
     </div>
   )
 }

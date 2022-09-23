@@ -30,7 +30,7 @@ return (
     
         <div className="d-flex justify-content-around">
             <div className="">
-            <img src={`../${item.image}`} alt={item.name} className="img-fluid"/>
+            <img src={`${item.img}`} alt={item.name} className="img-fluid"/>
             </div>
                 
             <div className="lead my-1">

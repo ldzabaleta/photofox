@@ -6,7 +6,7 @@ const Item = ({ product }) => {
   return (
     <div className="card text-light mb-4 image__zoom col-md-4" >
         <Link to={ `/detail/${product.id}` } className='text-decoration-none' >
-            <img src={`${product.image}`} alt={product.name} className="img-fluid"/>
+            <img src={`${product.img}`} alt={product.name} className="img-fluid"/>
             <div className="card-body">
                 <div className="h1 mb-3">
 
