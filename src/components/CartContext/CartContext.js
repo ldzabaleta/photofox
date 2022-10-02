@@ -8,7 +8,7 @@ const ProductsProvider = ({ children }) => {
     const [CartList, SetCartList] = useState({items: [], total: 0, cantidadTotal: 0});
     const [totalItems, SetTotalItems] = useState(0)
     const AddProduct = (item, itemQuantity) => {
-      const index = CartList.items.findIndex((i) => i.id === item.id);
+      const index = CartList.items.findIndex((i) => i.id === item.id)
 
       if (index > -1 ) {  
         CartList.items[index].cantidad += itemQuantity

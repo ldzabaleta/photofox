@@ -11,15 +11,14 @@ const ItemDetail = ({item}) => {
     const onAdd = (quantityToAdd) => {
         setItemQuantity(quantityToAdd);
     }
-
     const addToCart= () => {
         setSeAgregarAlCarrito(true)
         AddProduct(item, itemQuantity)
     }
 
     const agregarAlCarrito = seAgregoAlCarrito ? '' : <div> <button className="int__button" style={{lineHeight: '0.3rem'}} onClick={addToCart}>AÑADIR AL CARRITO {itemQuantity} </button></div>
-    const finalizarCompra = seAgregoAlCarrito ? <Link to="/cart">
-    <div> <button className="int__button" style={{lineHeight: '0.3rem'}}>FINALIZAR COMPRA</button></div>
+    const irAlCarrito = seAgregoAlCarrito ? <Link to="/cart">
+    <div> <button className="int__button" style={{lineHeight: '0.3rem'}}>IR AL CARRITO</button></div>
 </Link> : '';
 
     const seguirComprando = seAgregoAlCarrito ? <Link to="/">
@@ -46,7 +45,7 @@ return (
                     <div className='d-flex justify-content-space-between'>
                         {agregarAlCarrito} 
                         {seguirComprando} 
-                        {finalizarCompra}
+                        {irAlCarrito}
                     </div>
                     </span>
                 </span>

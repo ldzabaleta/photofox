@@ -16,7 +16,7 @@ const ItemListCointainer = ({category}) => {
 
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        docs.push( {...doc.data(),id: doc.id})
+        docs.push({...doc.data(), id: doc.id})
       });
       setItemData(docs)
     };
