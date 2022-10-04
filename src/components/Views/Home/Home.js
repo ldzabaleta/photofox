@@ -15,6 +15,7 @@ const Home = () => {
       setIsLoading(false)
     }, 2000)
     
+  
   }  
   return (
     <div>
