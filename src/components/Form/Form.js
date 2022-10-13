@@ -7,6 +7,7 @@ import { useState } from 'react';
 import moment from 'moment/moment';
 import { UseProductsContext } from '../CartContext/CartContext';
 import { Link } from 'react-router-dom';
+import MessageId from '../MessageId/MessageId';
 
 const initialBuyer = {
 	nombre: '',
@@ -79,8 +80,9 @@ export default function BasicTextFields({items, total}) {
 			: 
 			<div>
 				<span className='mx-5 fw-bold'>¡GRACIAS POR SU COMPRA!</span> 
+				{purchaseID && <MessageId purchaseID={purchaseID} />}
 				<Link to="/">
-					<div> <button className="int__button my-1 mx-5 " style={{ lineHeight: '0.3rem' }}>VOLVER AL INICIO</button></div>
+					<div> <button className="int__button my-1 mx-5 mt-3" style={{ lineHeight: '0.3rem' }}>VOLVER AL INICIO</button></div>
 				</Link>
 			</div>
 			

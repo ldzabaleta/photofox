@@ -14,9 +14,8 @@ const Home = () => {
     setTimeout(() => {
       setIsLoading(false)
     }, 2000)
-    
-  
   }  
+
   return (
     <div>
       <div className='col-md-3 pb-5 mx-5'>

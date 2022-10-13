@@ -43,16 +43,9 @@ const Cart = () => {
                             ))
                             :
                             <><tr>
-                                <td>El carrito está vacío</td>
+                                <td className='px-3'>El carrito está vacío</td>
                             </tr>
-                            {/* <tr>
-                                    <td>
-                                        <Link to="/">
-                                            <div> <button className="int__button" style={{ lineHeight: '0.3rem' }}>SEGUIR COMPRANDO</button></div>
-                                        </Link>
-                                    </td>
-                                </tr> */}
-                                </>}
+                            </>}
                         {CartList.items.length ?
                             <tr>
                                 <td>
