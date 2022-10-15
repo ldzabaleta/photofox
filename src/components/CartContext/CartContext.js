@@ -4,6 +4,8 @@ export const ProductsContext = createContext({items: [], total: 0, cantidadTotal
 
 export const UseProductsContext = () => useContext(ProductsContext);
 
+
+
 const ProductsProvider = ({ children }) => {
     const [CartList, SetCartList] = useState({items: [], total: 0, cantidadTotal: 0});
     const [totalItems, SetTotalItems] = useState(0)

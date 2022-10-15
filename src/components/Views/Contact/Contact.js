@@ -4,7 +4,8 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../FirebaseConfig';
-// import './contact.css'
+import MessageId from '../../MessageId/MessageId';
+import { validateEmail } from '../../../Helpers/Helper';
 
 const initialContact = {
 	nombre: '',
@@ -12,13 +13,12 @@ const initialContact = {
   mensaje: '',
 }
 
-
-
 export default function FullWidthTextField() {
   const [contact, setContact] = useState(initialContact);
-
+  const [isEmailValid, setIsEmailValid] = useState(false);
   const handleOnChange = (e) => {  
 		setContact({ ...contact, [e.target.name]: e.target.value });
+    if (e.target.name === 'email') setIsEmailValid(validateEmail(e.target.value))
 	};
 
   const onSubmit = async (e) => {
@@ -42,7 +42,7 @@ export default function FullWidthTextField() {
           Dejanos tu mensaje y te responderemos a la brevedad
         </h3>
       </div>
-      <div className='text-center imput-size'>
+      <div className='text-center'>
         <div className='px-4 pb-2'>
           <TextField className='px-2 pb-2'
               style ={{width: '50%'}}
@@ -75,8 +75,11 @@ export default function FullWidthTextField() {
               onChange={handleOnChange}
             />
         </div>
+        <div className='d-flex justify-content-center'>
+          { contact.email && !isEmailValid ? <MessageId type={'error'} message={'Invalid Email'} /> : ''}
+        </div>
         <div className='px-4 pt-3'>
-          <button onClick={onSubmit} className="int__button my-3 mx-2">ENVIAR</button>
+          <button onClick={onSubmit} disabled={!isEmailValid} className="int__button my-3 mx-2">ENVIAR</button>
         </div>
       </div>      
     </Box>
