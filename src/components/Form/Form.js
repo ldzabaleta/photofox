@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { db } from '../FirebaseConfig';
 import { useState } from 'react';
 import moment from 'moment/moment';
@@ -30,6 +29,7 @@ export default function BasicTextFields({items, total}) {
 	const handleOnChange = (e) => {  
 		setBuyer({ ...buyer, [e.target.name]: e.target.value });
 		setValues({buyer: buyer, total: total, items: items, date:  moment().format('YYYY-MM-DD HH:mm:ss')})
+	console.log(buyer);
 	};
 
     const onSubmit = async (e) => {
