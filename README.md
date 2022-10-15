@@ -2,6 +2,28 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Proyecto Photofox by Lucas de Zabaleta - Ecommerce de Lightroom Presets y Talleres Online.
+
+![photofox](https://user-images.githubusercontent.com/66915335/195963416-e601bddc-8a5c-4da1-8226-c8c446a9c4df.gif)
+
+
+Dependencias utilizadas:
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap-icons": "^1.9.1",
+    "firebase": "^9.10.0",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+
 ## Available Scripts
 
 In the project directory, you can run:
